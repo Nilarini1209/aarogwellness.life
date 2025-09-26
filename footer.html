@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <footer class="footer">
+    <div class="footer-overlay">
+      <h2>Stay Connected</h2>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-item">
+            <div class="addhead">
+              <h4>ADDRESS</h4>
+              <!-- Location Icon -->
+              <a href="https://www.google.com/maps/search/+Park+Lane+Ariyan+Street+Pallavaram,+Chennai-600043/@12.975644,80.1477912,257m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" title="View Location on Google Maps"
+                style="color: inherit; text-decoration: none; font-size: 24px;">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <p>
+              NO.57-A, 3rd Floor, Park Lane, St Courier Head Office,<br />
+                Ariyan Street, Pallavaram, Chennai-600043
+            </p>
+          </div>
+          <div class="footer-item">
+            <h4>EMAIL</h4>
+            <p>info@aarogwellness.com</p>
+          </div>
+          <div class="footer-item">
+            <h4>FOR ENQUIRY</h4>
+            <p>+91-9884852077</p>
+          </div>
+          <!-- <div class="footer-item">
+                <h4>CONTACT NO</h4>
+                <p>+91-9042230457</p>
+              </div> -->
+        </div>
+        <img
+            src="./Images/logo.webp"
+            alt="Center Logo"
+            class="footer-center-logo"
+          />
+
+        <div class="footer-right">
+          <p><strong>QUICK LINKS</strong></p>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="hair_skin.html">SERVICES</a></li>
+            <li><a href="our-gallery.html">OUR GALLERY</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="reach-us.html">REACH US</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="footer-bottom">
+
+        <!-- <img src="./Images/logo.webp" alt="Footer Logo" class="main-footer-logo" /> -->
+        <!-- <p>
+            © 2025 Aarog Wellness. All rights reserved.<br />
+            <span class="developer-credit">
+              <img
+                src="./Images/xl.webp"
+                alt="XL Logo"
+                class="xl-footer-logo"
+              />
+              Designed & Developed by
+              <a href="https://www.xlmanagementservices.in" target="_blank"
+                >XL Management Services</a
+              >
+            </span>
+          </p>  -->
+
+
+        <a href="https://www.xlmanagementservices.in" target="_blank"
+          style="text-decoration: none; color: inherit; display: inline-block;">
+          <p style="margin: 0;">
+            © 2025 Aarog Wellness. All rights reserved.<br />
+            <span class="developer-credit" style="display: inline-flex; align-items: center; gap: 8px;">
+                  <img
+                    src="./Images/xl.webp"
+                    alt="XL Logo"
+                    class="xl-footer-logo"
+                    style="height: 20px; vertical-align: middle;"
+                  />
+                  Designed & Developed by XL Management Services
+                </span>
+          </p>
+        </a>
+      </div>
+
+
+
+    </div>
+
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </footer>
+
+
+  <script>
+    const btn = document.querySelector(".back-to-top");
+
+  // Show button when scrolled down
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+  </script>
+</body>
+
+
+
+</html>

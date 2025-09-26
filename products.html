@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./Images/favicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="products.css"> -->
+    <title>Aarog - Products</title>
+    <style>
+        /* General Desktop Styles (default) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+        }
+
+        @font-face {
+            font-family: 'PassionsConflict';
+            src: url('/Font/PassionsConflict-Regular.ttf') format('truetype');
+            font-weight: lighter;
+            font-style: lighter;
+        }
+
+        @font-face {
+            font-family: 'PlayfairVariable';
+            src: url('/Font/Playfair-VariableFont_.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .heading {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .heading h1 {
+            font-family: 'PassionsConflict', cursive;
+            font-size: 6.0rem;
+            color: #C3A17C;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 35px;
+            font-weight: normal;
+        }
+
+        .heading img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .products,
+        .product2 {
+            background-color: #E8CCAC;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px;
+            align-items: center;
+            margin: 20px;
+            /* Added spacing between sections */
+        }
+
+        .content {
+            flex: 1 1 60%;
+            width: 60%;
+            /* This might be redundant with flex-basis */
+            padding-right: 20px;
+        }
+
+        .content h2 {
+            font-family: 'PlayfairVariable', serif;
+            font-size: 2.3rem;
+            font-weight: bold;
+            /* Changed font-style to font-weight */
+            color: #2b2b2b;
+            margin-left: 150px;
+        }
+
+        .content p {
+            font-family: 'PlayfairVariable', serif;
+            font-size: 20px;
+            line-height: 1.5;
+            /* Increased line-height for better readability */
+            color: #333;
+            margin-left: 150px;
+            text-align: justify;
+        }
+
+        /* Reverse order for product2 for visual variety on desktop */
+        .product2 {
+            flex-direction: reverse;
+            background-color: #E8CCAC;
+            margin:20px; 
+        }
+
+        .content2 {
+            flex: 1 1 60%;
+            width: 60%;
+            /* This might be redundant with flex-basis */
+            padding-left: 20px;
+            /* Adjusted for row-reverse */
+        }
+
+        .content2 h2 {
+            font-family: 'PlayfairVariable', serif;
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: #2b2b2b;
+            /* margin-left: 50px; */
+            /* Consider removing fixed margins if not needed */
+        }
+
+        .content2 p {
+            font-family: 'PlayfairVariable', serif;
+            font-size: 20px;
+            line-height: 1.5;
+            /* Increased line-height */
+            color: #333;
+            padding-right: 0px;
+            text-align: justify;
+            /* margin-left: 50px; */
+        }
+
+        .image,
+        .image2 {
+            position: relative;
+            flex: 1 1 35%;
+            /* Adjust flex-basis for images to take up less space */
+            max-width: 400px;
+            aspect-ratio: 4 / 3;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .image .slide,
+        .image2 .slide2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* <--- Change from 'cover' to 'contain' */
+            opacity: 0;
+            animation: fadeLoop 9s infinite;
+        }
+
+        .image .slide:nth-child(1),
+        .image2 .slide2:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .image .slide:nth-child(2),
+        .image2 .slide2:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .image .slide:nth-child(3),
+        .image2 .slide2:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        @keyframes fadeLoop {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* --- Tablet Styles (e.g., for iPads in portrait or smaller landscape) --- */
+        @media (max-width: 1024px) {
+            .heading h1 {
+                font-size: 4.5rem;
+                /* Slightly smaller for tablets */
+                margin-top: 20px;
+                margin-bottom: 25px;
+            }
+
+            .heading img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .products,
+            .product2 {
+                flex-direction: column;
+                /* Stack content and image */
+                padding: 30px;
+            }
+
+            /* Ensure content and image order is consistent for stacked layout */
+            .content,
+            .content2 {
+                order: 2;
+                /* Content after image */
+                width: 100%;
+                padding: 0;
+                /* Remove padding that creates large margins */
+                margin: 0;
+                text-align: center;
+                /* Center text on tablets */
+            }
+
+            .content h2,
+            .content2 h2 {
+                font-size: 2rem;
+                margin: 15px 0 10px;
+                /* Adjust spacing */
+                text-align: center;
+            }
+
+            .content p,
+            .content2 p {
+                font-size: 1.3rem;
+                margin: 0 20px 20px;
+                /* Add some side margin for text */
+                text-align: justify;
+                /* Keep justify for readability */
+            }
+
+            .image,
+            .image2 {
+                order: 1;
+                /* Image before content */
+                max-width: 600px;
+                /* Allow images to be wider on tablets */
+                width: 90%;
+                /* Take up more width */
+                margin: 0 auto 20px;
+            }
+        }
+
+        /* --- Mobile Styles (e.g., for phones and smaller tablets) --- */
+        @media (max-width: 768px) {
+            /* Changed from 1280px to 768px */
+
+            .heading {
+                flex-direction: row;
+                /* Stack logo and title vertically */
+                gap: 10px;
+            }
+
+            .heading img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .heading h1 {
+                font-size: 3rem;
+                /* Smaller for phones */
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .products,
+            .product2 {
+                padding: 15px;
+            }
+
+            .content h2,
+            .content2 h2 {
+                font-size: 1.6rem;
+                margin: 10px 0 5px;
+            }
+
+            .content p,
+            .content2 p {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin: 0 15px 15px;
+            }
+
+            .image,
+            .image2 {
+                max-width: 100%;
+                /* Ensure images don't overflow */
+                width: 95%;
+                /* Take almost full width */
+                margin: 0 auto 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <!-- Navbar -->
+        <div id="navbar-container"></div>
+        
+        
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                  // Load NAVBAR
+                  fetch('navbar.html')
+                    .then(res => res.text())
+                    .then(data => {
+                      document.getElementById('navbar-container').innerHTML = data;
+            
+                      // ✅ Wait until navbar is loaded, then attach listeners:
+                      const hamburger = document.getElementById('hamburger');
+                      const navLinks = document.getElementById('navLinks');
+                      const servicesDropdown = document.getElementById('servicesDropdown');
+                      const arrow = servicesDropdown.querySelector('.arrow');
+            
+                      hamburger.addEventListener('click', () => {
+                        navLinks.classList.toggle('show');
+                      });
+            
+                      arrow.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        servicesDropdown.classList.toggle('active');
+                      });
+            
+                      document.addEventListener('click', function (event) {
+                        if (!servicesDropdown.contains(event.target)) {
+                          servicesDropdown.classList.remove('active');
+                        }
+                      });
+            
+                      // ✅ Highlight current active link
+                      const currentPage = window.location.pathname.split('/').pop();
+                      const navLinksList = document.querySelectorAll('.nav-links a');
+            
+                      navLinksList.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href === currentPage) {
+                          const li = link.closest('li');
+                          if (li) li.classList.add('active');
+                          const dropdown = link.closest('.dropdown');
+                          if (dropdown) dropdown.classList.add('active');
+                        }
+                      });
+                    });
+            
+                  // Load FOOTER
+                  fetch("footer.html")
+                    .then(res => res.text())
+                    .then(data => {
+                      document.body.insertAdjacentHTML("beforeend", data);
+                    });
+                });
+        </script>
+        
+    <div class="heading">
+        <h1>Products</h1>
+        <img src="Images/output-onlinepngtools.webp" alt="icon">
+    </div>
+    <section class="product2">
+        <div class="image2">
+            <img src="Images/Janssen1.webp" alt="Janssen Cosmetics" class="slide2">
+            <img src="Images/Janssen2.webp" alt="Janssen Cosmetics" class="slide2">
+            <img src="Images/janssen3.webp" alt="Janssen Cosmetics" class="slide2">
+        </div>
+        <div class="content2">
+            <h2>Janssen Cosmetics</h2><br>
+            <p>Janssen Cosmetics is a German cosmeceutical skincare brand known for its
+                science-backed products. They combine pharmaceutical-grade active ingredients
+                with luxurious cosmetic formulations to deliver visible and long-lasting results
+                for all skin types. Founded in 1997, the brand is a pioneer in developing
+                cosmeceutical skincare solutions. </p>
+        </div>
+    </section>
+   
+    <section class="products">
+        <div class="content">
+            <h2>Aroma Treasures</h2><br>
+            <p>Aroma Treasures brings nature’s essence to your wellness
+                journey. Our pure essential oils and blends refresh your mind,
+                body, and soul. Each product is crafted to promote deep
+                relaxation and holistic healing.Experience the power of
+                aromatherapy for balance and rejuvenation.</p>
+        </div>
+        <div class="image">
+            <img src="Images/aroma1.webp" alt="Aroma Treasures" class="slide">
+            <img src="Images/aroma2.webp" alt="Aroma Treasures" class="slide">
+            <img src="Images/aroma3.webp" alt="Aroma Treasures" class="slide">
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./Images/favicon.webp" />
+    <title>Services - Skin</title>
+    <!-- Fonts: Dancing Script for headings, Playfair Display for body, Poppins as fallback -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="skin.css">
+</head>
+
+<body>
+    <!-- Hero Section - Wellness Repair -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-arch-bg"></div>
+                    <div class="image-frame hero-arch-image-frame">
+                        <img src="./Images/hair_spa.webp" alt="Back Massage" class="hero-img hero-arch-img">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Rituals for  Skin</h1>
+                    <p class="hero-description">
+                        Reveal your natural radiance with skin 
+                        therapies designed to renew, refresh, and restore.
+                    </p>
+                    <div class="hero-illustrations">
+                        <div class="illustration">
+                            <img src="./Images/element2.webp" alt="Massage Illustration">
+                        </div>
+                        <div class="illustration">
+                            <img src="./Images/download (1).webp" alt="Massage Illustration" height="240 !important">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Signature Wellness Journeys Section -->
+    <section id="services" class="signature-rituals">
+        <div class="container" id="seccontainer">
+            <div class="section-header">
+                <h2 class="section-title">Explore our signature rituals journey </h2>
+                <h3 class="section-subtitle">Skin</h3>
+            </div>
+            <div class="rituals-grid">
+            <!-- 
+                <div class="ritual-card" data-ritual="massage">
+                    <div class="arch-image">
+                        <img src="./Images/A2.webp" alt="Massage" class="ritual-img">
+                    </div>
+                    <div class="ritual-caption">Hair Spa & Hair Cut</div>
+                    <svg width="200" height="30">
+                        <rect x="30" y="10" width="140" height="1" rx="8" ry="8"
+                            style="stroke:#0c1d17;stroke-width:4;fill:none;" />
+                    </svg>
+                </div>
+            -->
+                <div class="ritual-card" data-ritual="spa">
+                    <div class="arch-image">
+                        <img src="./Images/skin.webp" alt="Spa Therapies & Rituals" class="ritual-img">
+                    </div>
+                    <div class="ritual-caption">FACIAL</div>
+                    <svg width="200" height="30">
+                        <rect x="30" y="10" width="140" height="1" rx="8" ry="8"
+                            style="stroke:#0c1d17;stroke-width:4;fill:none;" />
+                    </svg>
+                </div>
+                <div class="ritual-card" data-ritual="love">
+                    <div class="arch-image">
+                        <img src="./Images/wax.webp" alt="Love theory" class="ritual-img">
+                    </div>
+                    <div class="ritual-caption">THREADING & WAXING</div>
+                    <svg width="200" height="30">
+                        <rect x="30" y="10" width="140" height="1" rx="8" ry="8"
+                            style="stroke:#0c1d17;stroke-width:4;fill:none;" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Balinese Massage Rows Container Start -->
+    <div class="balinese-rows-container" id="balinese-rows-container">
+        <!-- Cards will be dynamically generated here -->
+    </div>
+    <!-- Balinese Massage Rows Container End -->
+
+
+
+
+
+
+    <script>
+
+
+
+
+        // Ritual data for each card
+        const ritualData = {
+             
+                
+        
+           
+            spa: [
+                {
+                    image: './Images/face1.webp',
+                    title: 'RADIANCE REVIVE FACIAL RITUAL',
+                    desc: 'Indulge in our luxurious facial treatment designed to cleanse, exfoliate and deeply nourish your skin. A soothing mask is gently applied with expert care, promoting a radiant glow and restoring your skin’s natural balance. Perfect for relaxation, hydration and a visibly refreshed complexion.'
+                },
+                {
+                    image: './Images/face2.webp',
+                    title: 'DEEP CLEANSE STEAM FACIAL',
+                    desc: 'Experience the power of steam and expert massage with our deep cleansing facial. This treatment opens pores, removes impurities and boosts circulation—leaving your skin purified, balanced and refreshed. Ideal for detoxifying and reviving dull or congested skin.'
+                },
+                {
+                    image: './Images/face3.webp',
+                    title: 'HERBAL CLAY DETOX FACIAL ',
+                    desc: 'Purify and restore your skin with our calming herbal clay mask facial. This treatment gently draws out toxins, controls excess oil and soothes the skin—leaving your complexion smooth, matte and naturally radiant. Ideal for sensitive or acne-prone skin types.'
+                },
+                {
+                    image: './Images/face4.webp',
+                    title: 'SOOTHING FACE THERAPY',
+                    desc: 'Relax your senses with our gentle face massage therapy designed to ease tension, boost circulation and promote inner calm. Expert hands work in harmony with nourishing oils to leave your skin feeling soft, lifted and refreshed. A perfect escape for both mind and skin.'
+                },
+
+
+            ],
+            love: [
+                {
+                    image: './Images/wax1.webp',
+                    title: 'EYE BROWS ',
+                    desc: '"Shape and define your brows with precision for a clean, well-groomed look. Our expert threading and trimming techniques ensure perfectly arched brows that complement your natural features. Whether you prefer a bold or subtle shape, we tailor each session to suit your face, enhancing your eyes and expressions effortlessly. '
+                },
+                {
+                    image: './Images/upper.webp',
+                    title: 'UPPER LIP',
+                    desc: 'EGently and effectively remove unwanted hair from the upper lip with our precise technique. This quick treatment delivers a smooth, clean finish, leaving your skin soft and refreshed. Achieve a neat, well-groomed look that enhances your natural beauty and boosts your confidence'
+                },
+                {
+                    image: './Images/wax3.webp',
+                    title: 'RICA WAX',
+                    desc: 'Treat yourself to a gentle, premium full-body wax with Rica—specially formulated for sensitive skin and enriched with natural, nourishing ingredients. This all-inclusive service covers Upper Lip, Chin, Full Face, Underarms, Full Arms, Half Leg, Full Leg and Full Back/Midriff. Enjoy soft, smooth and radiant skin from head to toe.'
+                },
+                {
+                    image: './Images/wax4.webp',
+                    title: 'HONEY WAX',
+                    desc: 'Experience the classic smoothness of a nourishing full body honey wax. Honey wax gently removes hair while moisturizing and soothing the skin. It covers Upper Lip, Chin, Full Face, Under Arms, Full Arms, Half Leg, Full Leg, and Full Back/Midriff. Reveal soft, radiant, hair-free skin from head to toe with a natural glow.'
+                },
+
+            ]
+        };
+
+        function renderBalineseCards(cards) {
+            const container = document.getElementById('balinese-rows-container');
+            container.innerHTML = '';
+
+            cards.forEach((card, idx) => {
+                // Create wrapper
+                const cardSection = document.createElement('section');
+                cardSection.className = 'custom-card-section';
+
+                // Create the card itself
+                const cardDiv = document.createElement('div');
+                cardDiv.className = [
+                    'custom-card',
+                    idx % 2 === 0 ? 'custom-card-green1' : 'custom-card-green2'
+                ].join(' ');
+
+                // Fill the content
+                cardDiv.innerHTML = `
+            <div class="custom-card-img">
+                <img src="${card.image}" alt="${card.title}" />
+            </div>
+            <div class="custom-card-text">
+                <h2 class="custom-card-title ${idx % 2 === 0 ? 'gold-text' : 'dark-text'}">${card.title}</h2>
+                <p class="custom-card-desc ${idx % 2 === 0 ? 'gold-text' : 'dark-text'}">${card.desc}</p>
+            </div>
+                `;
+
+                // **Trigger the animation** after insertion**
+                //   1) Append it (still invisible)
+                cardSection.appendChild(cardDiv);
+                container.appendChild(cardSection);
+                //   2) On the next frame, add the class
+                requestAnimationFrame(() => {
+                    cardDiv.classList.add('animate');
+                });
+            });
+        }
+
+        // Initial render (optional: show one set by default)
+        //renderBalineseCards(ritualData.spa);
+
+        // Get all ritual cards
+        document.querySelectorAll('.ritual-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const ritual = this.getAttribute('data-ritual');
+                const data = ritualData[ritual];
+                if (!data) return;
+                renderBalineseCards(data);
+            });
+        });
+    </script>
+
+    <script>
+
+        window.addEventListener("DOMContentLoaded", () => {
+            fetch("navbar.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML("afterbegin", data);
+                });
+
+            fetch("footer.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML("beforeend", data);
+                });
+        });
+
+
+
+
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        function toggleMenu() {
+            const nav = document.getElementById("navLinks");
+            nav.classList.toggle("show");
+        }
+
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const arrow = servicesDropdown.querySelector('.arrow');
+
+        arrow.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent bubbling
+            servicesDropdown.classList.toggle('active');
+        });
+
+        // Optional: Click outside to close
+        document.addEventListener('click', function (event) {
+            if (!servicesDropdown.contains(event.target)) {
+                servicesDropdown.classList.remove('active');
+            }
+        });
+
+
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        // const servicesDropdown = document.getElementById('servicesDropdown');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        servicesDropdown.addEventListener('click', () => {
+            servicesDropdown.classList.toggle('active');
+        });
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

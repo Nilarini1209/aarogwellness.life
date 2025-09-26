@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aarog- Reach Us </title>
+    <link rel="icon" type="image/png" href="./Images/favicon.webp" />
+
+    <link rel="stylesheet" href="reach-us-style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lora&family=Playfair+Display&display=swap"
+        rel="stylesheet">
+    <!-- Add this script tag -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+
+<body>
+
+
+
+
+
+    <div id="navbar-container"></div>
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-left">
+            <img src="./Images/contact pic.webp" alt="Massage Image" />
+        </div>
+        <div class="contact-right">
+            <h2>Reach Us</h2>
+            <form class="contact-form" id="contactForm" action="contactform/sendmail.php" method="post">
+                <input type="text" name="name" required placeholder="NAME" />
+                <input type="email" name="email" required placeholder="EMAIL" />
+                <!-- <input type="text" name="phone" placeholder="PHONE NUMBER" /> -->
+                <input type="tel"
+       name="phone"
+       placeholder="Phone Number"
+       pattern="[0-9]{10}"
+       maxlength="10"
+       title="Please enter a valid 10-digit phone number"
+       required />
+                <textarea name="message" placeholder="MESSAGE"></textarea>
+                <!-- reCAPTCHA Widget -->
+                <div class="recaptcha-container">
+                    <div class="g-recaptcha" data-sitekey="6Lddc50rAAAAADlWkw0MeMxAwcqe2gBK7rmN8azK" required></div>
+                </div>
+                <div class="error-message" id="recaptchaError" style="display: none;">Please complete the reCAPTCHA
+                    verification</div>
+                <button type="submit">SUBMIT</button>
+            </form>
+            <!-- Custom Success Modal -->
+            <div id="successModal" class="modal">
+                <div class="modal-content">
+                    <p>Thank you! Your wellness journey begins now.🌷 We'll reach out shortly.<br>
+                    – Team Aarog Wellness.</p>
+                    <button id="closeModal">OK</button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2 class="faq-heading">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+
+            <!-- Left side -->
+            <div class="faq-left">
+                <h3>Any Questions..? </h3>
+                <p>
+                    At Aarog Wellness, your comfort matters. <br />
+          Explore our most commonly asked questions below,<br />
+          and feel at ease knowing every detail is thoughtfully taken care of.
+                </p>
+                <div class="qa-logo">
+                    <img src="./Images/Qa.webp" alt="QA Logo" />
+                </div>
+            </div>
+
+
+
+            <!-- Right side -->
+            <div class="faq-right">
+
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        What services do you offer at Aarog Wellness?
+                        <span class="arrow">&#9660;</span>
+                    </h4>
+                    <div class="faq-divider"></div>
+                    <p class="faq-answer">
+                        We offer massages, facials, body treatments, and wellness therapies to promote healing and
+                        relaxation.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        How can I book a session?
+                        <span class="arrow">&#9660;</span>
+                    </h4>
+                    <div class="faq-divider"></div>
+                    <p class="faq-answer">
+                        You can book through our website or contact us via phone or WhatsApp for quick appointments.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        What are your opening hours?
+                        <span class="arrow">&#9660;</span>
+                    </h4>
+                    <div class="faq-divider"></div>
+                    <p class="faq-answer">
+                        We are open from 9:00 AM to 9:00 PM, 7 days a week including holidays.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        Do I need to bring anything for my appointment?
+                        <span class="arrow">&#9660;</span>
+                    </h4>
+                    <div class="faq-divider"></div>
+                    <p class="faq-answer">
+                        Just bring yourself! We provide all necessary amenities, including robes and towels.
+                    </p>
+                </div>
+
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        Are walk-in appointments available?
+                        <span class="arrow">&#9660;</span>
+                    </h4>
+                    <div class="faq-divider"></div>
+                    <p class="faq-answer">
+                        Yes, we accept walk-ins based on availability, but we recommend booking in advance to avoid
+                        waiting.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            fetch('navbar.html')
+                .then(res => res.text())
+                .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+
+                const currentPage = window.location.pathname.split('/').pop();
+                const navLinks = document.querySelectorAll('.nav-links a');
+
+                navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    const li = link.closest('li');
+                    if (li) li.classList.add('active');
+
+                    const dropdown = link.closest('.dropdown');
+                    if (dropdown) dropdown.classList.add('active');
+                }
+                });
+            });
+
+            fetch("footer.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML("beforeend", data);
+                });
+        });
+
+
+
+
+
+
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+
+
+
+
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const arrow = servicesDropdown.querySelector('.arrow');
+
+    arrow.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent bubbling
+      servicesDropdown.classList.toggle('active');
+    });
+
+    // Optional: Click outside to close
+    document.addEventListener('click', function (event) {
+      if (!servicesDropdown.contains(event.target)) {
+        servicesDropdown.classList.remove('active');
+      }
+    });
+
+
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    // const servicesDropdown = document.getElementById('servicesDropdown');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    servicesDropdown.addEventListener('click', () => {
+      servicesDropdown.classList.toggle('active');
+    });
+
+    
+
+
+
+    </script>
+    <script>
+        document.querySelector(".contact-form").addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
+        
+        
+        // Check if reCAPTCHA is completed
+        const recaptchaResponse = grecaptcha.getResponse();
+        const errorMessage = document.getElementById("recaptchaError");
+        
+        if (!recaptchaResponse) {
+        // Show error message and prevent submission
+        errorMessage.style.display = "block";
+        errorMessage.style.color = "red";
+        
+        // Scroll to reCAPTCHA widget
+        document.querySelector('.g-recaptcha').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+        });
+        
+        return false;
+        }
+        
+        // Hide error message if reCAPTCHA is completed
+        errorMessage.style.display = "none";
+        
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("contactform/sendmail.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          document.getElementById("successModal").style.display = "flex";
+          form.reset();
+        } else {
+          alert("Failed to send message. Please try again.");
+        }
+      })
+      .catch(() => {
+        alert("Error sending message. Please check your connection.");
+      });
+  });
+
+  // Close modal on button click
+  document.getElementById("closeModal").addEventListener("click", function () {
+    document.getElementById("successModal").style.display = "none";
+  });
+    </script>
+
+
+
+</body>
+
+
+
+
+</html>

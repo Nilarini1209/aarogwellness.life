@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="./Images/logo.webp" alt="Aarog Logo" /></a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a class="link-nav" href="index.html">Home</a></li>
+       <li class="dropdown" id="servicesDropdown">
+    Services <span class="arrow">&#9662;</span>
+    <ul class="dropdown-menu">
+        <li><a class="link-nav" href="hair_skin.html" onclick="closeDropdown()">Skin</a></li>
+        <li><a class="link-nav" href="body.html" onclick="closeDropdown()">Body</a></li>
+    </ul>
+</li>
+
+            <li><a class="link-nav" href="our-gallery.html">Our Gallery</a></li>
+            <li><a class="link-nav" href="products.html">Products</a></li>
+            <li><a class="link-nav" href="reach-us.html">Reach Us</a></li>
+        </ul>
+    </header>
+<script>
+    function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+    }
+    
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const arrow = servicesDropdown.querySelector('.arrow');
+    
+    // Toggle dropdown when clicking the arrow
+    arrow.addEventListener('click', (e) => {
+    e.stopPropagation();
+    servicesDropdown.classList.toggle('active');
+    });
+    
+    // Toggle dropdown when clicking the main "Services" text
+    servicesDropdown.addEventListener('click', (e) => {
+    if (e.target === servicesDropdown) { // Only if clicking the main element, not children
+    servicesDropdown.classList.toggle('active');
+    }
+    });
+    
+    // Close dropdown when clicking anywhere else
+    document.addEventListener('click', function(event) {
+    if (!servicesDropdown.contains(event.target)) {
+    servicesDropdown.classList.remove('active');
+    }
+    });
+    
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('show');
+    });
+</body>
+
+</html>
